@@ -152,4 +152,11 @@ if __name__ == "__main__":
             imap_server, username, password, folder = account
             download_emails(imap_server, username, password, folder)
 
+    print("Starte pilerimport als User 'piler'...")
+    subprocess.run(
+        "cd /var/tmp && pilerimport -d /var/tmp/emails -r",
+        shell=True,
+        check=True
+    )
+
     print("✅ Skript beendet.")
