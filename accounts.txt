@@ -1,0 +1,1 @@
+ImapServer;Mail@Host;Password;Folder(EmptyForAny)
