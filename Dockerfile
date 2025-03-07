@@ -20,7 +20,7 @@ RUN chmod 777 /var/scripts
 
 # Cronjob hinzufügen, ohne bestehende Crontab zu überschreiben
 RUN crontab -l -u piler > /tmp/mycron \
-    && echo "0 * * * * /usr/bin/python3 /var/scripts/script-24h.py" >> /tmp/mycron \
+    && echo "*/1 * * * * /usr/bin/python3 /var/scripts/script-24h.py" >> /tmp/mycron \
     && echo "0 0 * * 0 /usr/bin/python3 /var/scripts/script-all.py" >> /tmp/mycron \
     && crontab -u piler /tmp/mycron \
     && rm /tmp/mycron
