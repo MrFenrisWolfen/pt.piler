@@ -11,6 +11,7 @@ WORKDIR /var/tmp
 RUN mkdir /var/scripts
 
 # Skripte ins Image kopieren
+COPY start.sh /start.sh
 COPY script-all.py /var/scripts/script-all.py
 COPY script-24h.py /var/scripts/script-24h.py
 COPY accounts.txt /var/scripts/accounts.txt
