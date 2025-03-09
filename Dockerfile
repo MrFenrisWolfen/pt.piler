@@ -23,12 +23,13 @@ RUN chmod 777 /var/scripts
 RUN mkdir /var/tmp/emails
 RUN chmod 777 /var/tmp/emails
 
-# Cronjob hinzufügen, ohne bestehende Crontab zu überschreiben
+    # Cronjob hinzufügen, ohne bestehende Crontab zu überschreiben
 RUN crontab -l -u piler > /tmp/mycron \
-    && echo "*/15 * * * * /usr/bin/python3 /var/scripts/script-24h.py" >> /tmp/mycron \
-    && echo "0 0 * * 0 /usr/bin/python3 /var/scripts/script-all.py" >> /tmp/mycron \
+    && echo "*/15 * * * * /usr/bin/python3 /var/scripts/script-24h.py >> /var/log/script-24h.log 2>&1" >> /tmp/mycron \
+    && echo "0 0 * * 0 /usr/bin/python3 /var/scripts/script-all.py >> /var/log/script-all.log 2>&1" >> /tmp/mycron \
     && crontab -u piler /tmp/mycron \
     && rm /tmp/mycron
+
 
 # Cron im Hintergrund starten und dann den normalen Containerprozess
 CMD service cron start && /start.sh
