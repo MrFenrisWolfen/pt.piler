@@ -9,7 +9,7 @@ import subprocess
 # Konfiguration
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ACCOUNTS_FILE = os.path.join(SCRIPT_DIR, "accounts.txt")
-SAVE_DIRECTORY = os.path.join(SCRIPT_DIR, "./emails")
+SAVE_DIRECTORY = os.path.join(SCRIPT_DIR, "/var/tmp/emails")
 SAVED_EMAILS_FILE = os.path.join(SCRIPT_DIR, "saved_emails.txt")
 DELETE_EMAILS = False  
 
