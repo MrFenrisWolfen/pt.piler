@@ -21,7 +21,7 @@ RUN chmod +x /start.sh
 RUN chmod +x /var/scripts/script-*.py
 RUN chmod 777 /var/scripts
 RUN mkdir /var/tmp/emails
-RUN chmod 777 /var/tmp
+RUN chmod 777 /var/tmp/emails
 
 # Cronjob hinzufügen, ohne bestehende Crontab zu überschreiben
 RUN crontab -l -u piler > /tmp/mycron \
