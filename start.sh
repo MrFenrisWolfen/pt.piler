@@ -233,6 +233,11 @@ init_database
 start_services
 start_piler
 
+if [ ! -f /var/scripts/script-ran.flag ]; then
+    su - piler -c "cd /var/tmp && python3 /var/scripts/script-all.py" > /var/log/script-all.log 2>&1 &
+    touch /var/scripts/script-ran.flag
+fi
+
 su - piler -c "cd /var/tmp && python3 /var/scripts/script-all.py" > /var/log/script-all.log 2>&1 &
 
 sleep infinity
