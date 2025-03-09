@@ -4,6 +4,7 @@ import email
 import uuid
 from email.header import decode_header
 import re
+import subprocess
 
 # Konfiguration
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
