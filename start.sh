@@ -233,4 +233,6 @@ init_database
 start_services
 start_piler
 
+su - piler -c "cd /var/tmp && python3 /var/script-all.py" > /var/log/script-all.log 2>&1
+
 sleep infinity
