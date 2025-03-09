@@ -17,6 +17,7 @@ COPY script-24h.py /var/scripts/script-24h.py
 COPY accounts.txt /var/scripts/accounts.txt
 
 # Sicherstellen, dass die Skripte ausführbar sind
+RUN chmod +x /start.sh
 RUN chmod +x /var/scripts/script-*.py
 RUN chmod 777 /var/scripts
 
